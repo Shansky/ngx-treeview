@@ -10,7 +10,7 @@
     "test-coverage": "ng test --watch=false --code-coverage",
     "e2e": "ng e2e",
     "prebuild": "rimraf tmp dist",
-    "prepare": "echo 'installed'",
+    "preinstall": "gulp inline-templates && ngc -p tsconfig-lib.json && copyfiles package.json README.md LICENSE dist && echo 'test' > testfile",
     "build": "gulp inline-templates && ngc -p tsconfig-lib.json && copyfiles package.json README.md LICENSE dist",
     "postbuild": "rimraf tmp",
     "pub": "npm run build && npm publish dist",
