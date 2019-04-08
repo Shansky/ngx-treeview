@@ -10,7 +10,7 @@
     "test-coverage": "ng test --watch=false --code-coverage",
     "e2e": "ng e2e",
     "prebuild": "rimraf tmp dist",
-    "postinstall": "npm install --ignore-scripts && npm run build && mkdir source && mv {.,}* source/ && mv source/dist/src/* ./",
+    "postinstall": "npm install --ignore-scripts && npm run build && ./reorganize.sh",
     "build": "gulp inline-templates && ngc -p tsconfig-lib.json && copyfiles package.json README.md LICENSE dist",
     "postbuild": "rimraf tmp",
     "pub": "npm run build && npm publish dist",
